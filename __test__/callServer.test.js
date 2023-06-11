@@ -15,7 +15,7 @@ describe("Test API call", () => {
             }
         }
         const response = await callServer('getGeolocation', bigData)
-        expect(response.geonames[0].countryName).toBe('Australia')
+        expect(response.geonames[0].countryCode).toBe('VN')
     })
 
 })
