@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Travel app">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> -->
+  <title>Travel App</title>
+</head>
+
+<body>
+  <header>
+    <h1>Travel App</h1>
+  </header>
+  <form id="input-form" class="input-form">
+    <div id="destination" class="user-input">
+      <label for="city">City</label>
+      <input type="text" id="city" value="Hanoi">
+    </div>
+    <div id="start" class="user-input">
+      <label for="start-date">Start Date</label>
+      <input type="date" id="start-date">
+    </div>
+    <div id="end" class="user-input">
+      <label for="end-date">End Date</label>
+      <input type="date" id="end-date">
+    </div>
+    <div id="error-message" class="error-message"></div>
+    <div class="button-group">
+      <input type="submit" id="submit-button" class="button" value="Submit">
+      <input type="submit" id="clear-button" class="button" value="Clear Saved Data">
+    </div>
+  </form>
+  <section id="results-container" class="results-container">
+    <h2 id="result"></h2>
+    <div id="location-image-container" class="location-image-container"></div>
+    <h2 id="forecast-title"></h2>
+  </section>
+  <section id="forecast-card-container" class="forecast-card-container"></section>
+  <footer>
+    Final project for Udacity Front End Web Developer Nano degree
+  </footer>
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+</body>
+
+</html>
