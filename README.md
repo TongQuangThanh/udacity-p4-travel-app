@@ -17,9 +17,9 @@ You must have an API key for each of the 3 APIs above.
 After you get your API keys, make a file called *.env* in the project root folder. File should contain:
 
 ```
-GEONAMES_KEY = {your key here}
-WEATHERBIT_KEY = {your key here}
-PIXABAY_KEY = {your key here}
+geonames={your username here}
+weatherbit={your key here}
+pixabay={your key here}
 ```
 There is an included file called *.env-sample*. You may add your keys to this template file, then change its name to *.env*
 
@@ -47,7 +47,7 @@ To load the page, set your browser's address bar to:
 http://localhost:8081/
 ```
 
-* **City (required)** - The city/location where you'll travel to. App will return an error if the API can't find it. Not case-sensitive, but spelling is important. If your entry is returning a place with the same name in a different country, you can add the country to the input box, for example:
+* **City (required)** - The city where you'll travel to, for example:
 
 ```
 Hanoi
@@ -58,7 +58,7 @@ Hanoi
 
 Press the **Submit** button when all data have been entered.
 
-The app returns an image for the destination location. If it can't find one for that particular city/location, it will choose one for the country the location is in instead. You can change the image randomly by clicking the **Get another Image** button.
+The app returns an image for the destination location.
 
 The app returns a forecast card for each date of the trip, up until a maximum of 15 days after today. Each card contains the following information:
 
