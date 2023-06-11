@@ -2,9 +2,13 @@
 const dotenv = require('dotenv')
 dotenv.config()
 
+// .env file
+// geonames=tongquangthanh1994
+// weatherbit=a9d99dbe44ec4ead9f2b5ec9da72a171
+// pixabay=37194223-f0c50a500d547057d390fba6a
+
 // Set URL pieces for 3 APIs
 const GEONAMES_ROOT = "http://api.geonames.org/wikipediaSearchJSON?q="
-                     //http://api.geonames.org/wikipediaSearch?q=london&maxRows=10&username=demo
 const GEONAMES_KEY_URL = `&username=${process.env.geonames}`
 const GEONAMES_PARAMS = "&maxRows=1"
 
@@ -38,9 +42,7 @@ app.use(bodyParser.json())
 module.exports = app
 
 // Serves the main page to browser
-app.get('/',
-    (req, res) => res.sendFile('dist/index.html')
-)
+app.get('/', (req, res) => res.sendFile('dist/index.html'))
 
 // Endpoint for the GeoNames API
 app.post('/getGeolocation', getGeolocation)

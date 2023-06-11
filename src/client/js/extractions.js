@@ -83,27 +83,3 @@ export function extractForecastData(weatherBitData, bigData) {
     return forecastData
 }
 
-/**
- * Extracts the most-liked photo from the list
- * @param {object} photoData Data returned from Pixabay API
- */
-export function extractMostLikedPhoto(photoData) {
-    // Holds the most number of likes so far
-    let topLikes = 0
-    let chosenPhoto = ""
-    // Largest value of a "page" in returned photo results
-    let count = 100
-    // Set count lower if fewer than count results were returned
-    if (photoData.totalHits < count) {
-        count = photoData.totalHits
-    }
-    // Check if each photo has more likes than current champ
-    // Replace previous photo if this one has more likes
-    for (let i = 0; i < count; i++) {
-        if (photoData.hits[i].likes > topLikes) {
-            chosenPhoto = photoData.hits[i].webformatURL
-            topLikes = photoData.hits[i].likes
-        }
-    }
-    return chosenPhoto
-}

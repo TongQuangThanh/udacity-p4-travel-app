@@ -68,7 +68,7 @@ export async function submitted(event) {
     }
 }
 
-function getTimeUntilDate(date) {
+export function getTimeUntilDate(date) {
     const todayMilliseconds = (new Date()).setHours(1);
     const dateMilliseconds = (new Date(date)).setHours(1);
     const timeUntilDate = countdown(todayMilliseconds, dateMilliseconds, countdown.DAYS).days;
